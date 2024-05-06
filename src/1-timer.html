@@ -9,9 +9,34 @@
 </head>
 
 <body>
+  <div class="wrap">
+    <div class="display-start">
+      <input type="text" id="datetime-picker" />
+      <button class="btn" type="button" data-start>Start</button>
+    </div>
 
-  <a class="form-back-link" href="./index.html">Back to main page</a>
+    <div class="timer">
+      <div class="field">
+        <span class="value" data-days>00</span>
+        <span class="label">Days</span>
+      </div>
+      <div class="field">
+        <span class="value" data-hours>00</span>
+        <span class="label">Hours</span>
+      </div>
+      <div class="field">
+        <span class="value" data-minutes>00</span>
+        <span class="label">Minutes</span>
+      </div>
+      <div class="field">
+        <span class="value" data-seconds>00</span>
+        <span class="label">Seconds</span>
+      </div>
+    </div>
+
   </div>
+  <a class="form-back-link" href="./index.html">Back to main page</a>
+
   <script type="module" src="./js/1-timer.js" defer></script>
 </body>
 

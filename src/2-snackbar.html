@@ -9,7 +9,28 @@
 </head>
 
 <body>
-  <div class="wrap">
+  <div class="container">
+    <form class="form">
+      <label class="delay-label">
+        Delay (ms)
+        <input class="input-delay" type="number" name="delay" required />
+      </label>
+
+
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">State</legend>
+        <label class="fulfilled-label">
+          <input class="fulfilled" type="radio" name="state" value="fulfilled" required checked />
+          Fulfilled
+        </label>
+        <label class="rejected-label">
+          <input class="rejected" type="radio" name="state" value="rejected" required />
+          Rejected
+        </label>
+      </fieldset>
+
+      <button class="btn" type="submit">Create notification</button>
+    </form>
 
 
     <a class="form-back-link" href="./index.html">Back to main page</a>
