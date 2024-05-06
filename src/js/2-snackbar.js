@@ -31,11 +31,20 @@ function handleSubmit(event) {
     .then(function () {
       iziToast.success({
         message: `✅ Fulfilled promise in ${delay}ms`,
+        position: 'topRight',
+        backgroundColor: '#59A10D',
+        messageColor: 'white',
+        icon: '',
       });
     })
     .catch(function () {
       iziToast.error({
         message: `❌ Rejected promise in ${delay}ms`,
+        position: 'topRight',
+        backgroundColor: '#EF4040',
+        messageColor: 'white',
+        icon: '',
+        color: 'white',
       });
     });
 }
