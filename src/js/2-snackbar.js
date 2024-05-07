@@ -10,15 +10,13 @@ formEl.addEventListener('submit', handleSubmit);
 
 function createPromise(delay, state) {
   return new Promise((resolve, reject) => {
-    if (state === 'fulfilled') {
-      setTimeout(() => {
-        resolve();
-      }, `${delay}`);
-    } else {
-      setTimeout(() => {
-        reject();
-      }, `${delay}`);
-    }
+    setTimeout(() => {
+      if (state === 'fulfilled') {
+        resolve(delay);
+      } else {
+        reject(delay);
+      }
+    }, delay);
   });
 }
 
@@ -28,7 +26,7 @@ function handleSubmit(event) {
   const state = event.target.elements.state.value;
 
   createPromise(delay, state)
-    .then(function () {
+    .then(function (delay) {
       iziToast.success({
         message: `✅ Fulfilled promise in ${delay}ms`,
         position: 'topRight',
@@ -37,7 +35,7 @@ function handleSubmit(event) {
         icon: '',
       });
     })
-    .catch(function () {
+    .catch(function (delay) {
       iziToast.error({
         message: `❌ Rejected promise in ${delay}ms`,
         position: 'topRight',
